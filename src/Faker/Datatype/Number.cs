@@ -4,10 +4,19 @@ namespace Datatype
 {
 	public static class Int
 	{
-		public static dynamic Next(int min, int max)
+		public static int Next(int min, int max)
 		{
-			var rnd = new Random();
-			return rnd.Next(min, max);
+			var random = new Random();
+			return random.Next(min, max);
+		}
+	}
+	public static class Float
+	{
+		public static float Next(float min, float max)
+		{
+			var random = new Random();
+			var value = (random.NextDouble() * (max - min) + min);
+			return (float)value;
 		}
 	}
 }
