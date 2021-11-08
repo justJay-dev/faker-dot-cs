@@ -1,7 +1,9 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 //@TODO
 namespace FakerTest
 {
+
 	[TestClass]
 	public class UnitTest1
 	{
