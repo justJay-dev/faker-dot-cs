@@ -1,9 +1,12 @@
 using System;
 using System.Linq;
-namespace Datatype
+namespace Faker.Datatype
 {
 	public static class String
 	{
+		/// <summary>
+		/// returns a string of random alphanumerics, for a given length
+		/// </summary>
 		public static string Next(int length)
 
 		{

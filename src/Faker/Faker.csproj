@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-     <RootNamespace>FakerCS</RootNamespace>
-    <AssemblyName>FakerCS</AssemblyName>
+     <RootNamespace>Faker</RootNamespace>
+    <AssemblyName>Faker</AssemblyName>
     <OutputType>Library</OutputType>
   </PropertyGroup>
 
