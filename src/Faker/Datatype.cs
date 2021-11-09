@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-
+using System.Text.Json;
 namespace Faker
 {
 	public class Datatype
@@ -84,12 +84,33 @@ namespace Faker
 			return results.ToArray();
 		}
 
-		public static Object Object(int length = 5)
+		public static Object Object(int length = 5, string type = "string")
 		{
-			var data = new Locales.Hacker();
+			var hacker = new Locales.Hacker();
+			List<string> choices = new List<string>{
+				"number",
+				"string",
+				"boolean",
+				"array",
+				"object"
+			};
+			var coinToss = Boolean();
 			List<dynamic> results = new List<dynamic>() { };
-			results.Add(Helpers.Pick.RandomList(data.Adjectives));
-			return results;
+			switch (type)
+			{
+				case "string":
+					Helpers.Repeat.Times(length, () => results.Add(Hacker.Noun() + ":" + (coinToss ? Hacker.IngVerb() : Hacker.Phrase())));
+					break;
+				case "number":
+					Helpers.Repeat.Times(length, () => results.Add(Hacker.Abbreviation() + ":" + (coinToss ? Int() : Double()).ToString()));
+					break;
+				case "boolean":
+					Helpers.Repeat.Times(length, () => results.Add(Hacker.IngVerb() + ":" + (Boolean().ToString())));
+					break;
+
+
+			}
+			return JsonSerializer.Serialize(results);
 
 		}
 		public static dynamic Json(int length = 7)
