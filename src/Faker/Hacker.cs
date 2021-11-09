@@ -28,15 +28,21 @@ namespace Faker
 			var hacker = new Locales.Hacker();
 			return Helpers.Pick.RandomList(hacker.Nouns);
 		}
-		public static string Phrase()
-		{
-			var hacker = new Locales.Hacker();
-			return Helpers.Pick.RandomList(hacker.Phrases);
-		}
 		public static string Verb()
 		{
 			var hacker = new Locales.Hacker();
 			return Helpers.Pick.RandomList(hacker.Verbs);
+		}
+		public static string Phrase()
+		{
+			var hacker = new Locales.Hacker();
+			var originalPhrase = Helpers.Pick.RandomList(hacker.Phrases);
+			return originalPhrase
+			.Replace("{{abbreviation}}", Helpers.Pick.RandomList(hacker.Abbreviations))
+			.Replace("{{adjective}}", Helpers.Pick.RandomList(hacker.Adjectives))
+			.Replace("{{ingverb}}", Helpers.Pick.RandomList(hacker.IngVerbs))
+			.Replace("{{noun}}", Helpers.Pick.RandomList(hacker.Nouns))
+			.Replace("{{verb}}", Helpers.Pick.RandomList(hacker.Verbs));
 		}
 
 	}
