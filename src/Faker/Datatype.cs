@@ -87,6 +87,7 @@ namespace Faker
 		public static Object Object(int length = 5, string type = "string")
 		{
 			var hacker = new Locales.Hacker();
+			//you are here, and you are lost.
 			List<string> choices = new List<string>{
 				"number",
 				"string",
