@@ -1,8 +1,3 @@
-
-using System;
-using System.Linq;
-using System.Collections.Generic;
-
 namespace Faker
 {
 
@@ -33,6 +28,7 @@ namespace Faker
 			var hacker = new Locales.Hacker();
 			return Helpers.Pick.RandomList(hacker.Verbs);
 		}
+		//TODO this should randomize each instance of the mustache.
 		public static string Phrase()
 		{
 			var hacker = new Locales.Hacker();
