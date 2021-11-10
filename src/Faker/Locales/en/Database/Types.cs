@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+namespace Faker.Locales
+{
+	public partial class Database
+	{
+		public List<string> Types = new List<string>
+		{
+			"int",
+			"varchar",
+			"text",
+			"date",
+			"datetime",
+			"tinyint",
+			"time",
+			"timestamp",
+			"smallint",
+			"mediumint",
+			"bigint",
+			"decimal",
+			"float",
+			"double",
+			"real",
+			"bit",
+			"boolean",
+			"serial",
+			"blob",
+			"binary",
+			"enum",
+			"set",
+			"geometry",
+			"point"
+		};
+	}
+}
