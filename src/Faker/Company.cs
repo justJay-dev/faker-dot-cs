@@ -15,6 +15,23 @@ namespace Faker
 			return Helpers.Randomize(company.Suffixes);
 		}
 
+		//TODO WAIT FOR NAMES IMPLEMENTATION.
+		public static string CompanyName(int formatIndex)
+		{
+			switch (formatIndex)
+			{
+				case 0:
+					return "todo";
+				case 1:
+					return "todo";
+				case 2:
+					return "todo";
+				default:
+					return "todo";
+
+			}
+		}
+
 		public static string CatchPhraseAdjective()
 		{
 			var company = new Locales.Company();
