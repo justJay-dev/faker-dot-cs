@@ -15,19 +15,18 @@ namespace Faker
 			return Helpers.Randomize(company.Suffixes);
 		}
 
-		//TODO WAIT FOR NAMES IMPLEMENTATION.
-		public static string CompanyName(int formatIndex)
+		public static string CompanyName(int formatIndex = 0)
 		{
+			var company = new Locales.Company();
+			var names = new Locales.Name();
 			switch (formatIndex)
 			{
-				case 0:
-					return "todo";
 				case 1:
-					return "todo";
+					return Name.LastName() + " - " + Name.LastName();
 				case 2:
-					return "todo";
+					return Name.LastName() + ", " + Name.LastName() + " and " + Name.LastName();
 				default:
-					return "todo";
+					return Name.LastName() + " " + CompanySuffix();
 
 			}
 		}
