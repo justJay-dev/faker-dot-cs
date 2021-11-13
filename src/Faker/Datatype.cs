@@ -125,7 +125,7 @@ namespace Faker
 			};
 
 
-			const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+			//const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 			return "uwu";
 		}
 	}
