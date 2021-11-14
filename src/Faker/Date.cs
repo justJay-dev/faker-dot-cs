@@ -21,6 +21,20 @@ namespace Faker
             return DateTime.Parse(randMonth + "/" + randDay + "/" + randYear);
         }
 
+        public static DateTime Recent(int days = 15, string refDate = "MMM/DD/YYYY")
+        {
+            int random = Datatype.Int(1, days);
+            DateTime startHere = refDate == "MM/DD/YYYY" ? DateTime.Today : DateTime.Parse(refDate);
+            return startHere.AddDays(random * -1);
+
+        }
+        public static DateTime Soon(int days = 15, string refDate = "MMM/DD/YYYY")
+        {
+            int random = Datatype.Int(1, days);
+            DateTime startHere = refDate == "MM/DD/YYYY" ? DateTime.Today : DateTime.Parse(refDate);
+            return startHere.AddDays(random);
+        }
+
 
         //todo SUMMARY THESE. "MM/DD/YYYY"
         public static DateTime Between(string from, string to)
@@ -31,6 +45,7 @@ namespace Faker
             var range = Convert.ToInt32(end.Subtract(start).TotalDays);
             return start.AddDays(random.Next(range));
         }
+
         public static string Month(bool abbr = false)
         {
             var date = new Locales.Date.Months();
