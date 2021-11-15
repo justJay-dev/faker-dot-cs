@@ -51,18 +51,18 @@ namespace Faker
             var date = new Locales.Date.Months();
             if (abbr)
             {
-                return Helpers.Pick.RandomList(date.Abbr);
+                return Helpers.Randomize(date.Abbr);
             }
-            return Helpers.Pick.RandomList(date.Wide);
+            return Helpers.Randomize(date.Wide);
         }
         public static string Weekday(bool abbr = false)
         {
             var date = new Locales.Date.Weekdays();
             if (abbr)
             {
-                return Helpers.Pick.RandomList(date.Abbr);
+                return Helpers.Randomize(date.Abbr);
             }
-            return Helpers.Pick.RandomList(date.Wide);
+            return Helpers.Randomize(date.Wide);
         }
 
     }
