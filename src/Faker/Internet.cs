@@ -45,15 +45,18 @@ namespace Faker
 
         }
 
-        //TODO this requires lorem to be appropriately complete, stubbed name for now
         public static string DomainName()
         {
-            return Name.FirstName() + DomainSuffix();
+            return Lorem.Word() + DomainSuffix();
+        }
+
+        public static string DomainWord()
+        {
+            return Lorem.Word();
         }
 
         //TODO
         /*
-        *domainWord
         *ip
         *ipv6
         *userAGent
