@@ -21,14 +21,14 @@ namespace Faker
             return DateTime.Parse(randMonth + "/" + randDay + "/" + randYear);
         }
 
-        public static DateTime Recent(int days = 15, string refDate = "MMM/DD/YYYY")
+        public static DateTime Recent(int days = 15, string refDate = "MM/DD/YYYY")
         {
             int random = Datatype.Int(1, days);
             DateTime startHere = refDate == "MM/DD/YYYY" ? DateTime.Today : DateTime.Parse(refDate);
             return startHere.AddDays(random * -1);
 
         }
-        public static DateTime Soon(int days = 15, string refDate = "MMM/DD/YYYY")
+        public static DateTime Soon(int days = 15, string refDate = "MM/DD/YYYY")
         {
             int random = Datatype.Int(1, days);
             DateTime startHere = refDate == "MM/DD/YYYY" ? DateTime.Today : DateTime.Parse(refDate);
