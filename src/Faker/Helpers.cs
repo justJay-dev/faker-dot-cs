@@ -64,5 +64,14 @@ namespace Faker
             string[] split = value.Split(symbol);
             return value.Replace(symbol, replaced);
         }
+
+
+        public static bool ContainsAny(string s, List<string> substrings)
+        {
+            if (string.IsNullOrEmpty(s) || substrings == null)
+                return false;
+
+            return substrings.Any(substring => s.Contains(substring, StringComparison.CurrentCultureIgnoreCase));
+        }
     }
 }
