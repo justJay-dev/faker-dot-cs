@@ -12,12 +12,12 @@ namespace Faker
             return DateTime.Parse(randMonth + "/" + randDay + "/" + randYear);
         }
         //this isnt super ideal, but technically works.
-        public static DateTime Future(int years = 1, string refDate = "MM/DD/YYYY")
+        public static DateTime Future(int maxYears = 1, string refDate = "MM/DD/YYYY")
         {
             DateTime startHere = refDate == "MM/DD/YYYY" ? DateTime.Today : DateTime.Parse(refDate);
             int randMonth = Datatype.Int(startHere.Month, 12);
-            int randDay = Datatype.Int(startHere.Day, DateTime.DaysInMonth(startHere.Year, randMonth));
-            int randYear = Datatype.Int(startHere.Year, startHere.Year + years);
+            int randDay = Datatype.Int(startHere.Day + 1, DateTime.DaysInMonth(startHere.Year, randMonth));
+            int randYear = Datatype.Int(startHere.Year, startHere.Year + maxYears);
             return DateTime.Parse(randMonth + "/" + randDay + "/" + randYear);
         }
 
@@ -42,6 +42,8 @@ namespace Faker
             var random = new Random();
             DateTime start = DateTime.Parse(from);
             DateTime end = DateTime.Parse(to);
+            //TODO: BUG HERE, it can in theory return the start of end date
+            //This whole function is weird. Refactor me.
             var range = Convert.ToInt32(end.Subtract(start).TotalDays);
             return start.AddDays(random.Next(range));
         }
@@ -64,6 +66,8 @@ namespace Faker
             }
             return Helpers.Randomize(date.Wide);
         }
+
+        //TODO: Support EU style dates IE DD/MM/YYYY
 
     }
 }
