@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 //tests Faker.Datatype class
+using Faker;
 
 namespace FakerTest.Datatype
 {
@@ -120,7 +121,6 @@ namespace FakerTest.Datatype
             //todo test the types of the elements of the array
 
         }
-        /*
         //object test
         // todo these are all bad tests.
         [Fact]
@@ -134,10 +134,19 @@ namespace FakerTest.Datatype
         [Fact]
         public void ObjectWithLengthTest()
         {
+            var hacker = new Faker.Locales.Hacker();
             var object1 = Faker.Datatype.Object(length: 10);
             var object2 = Faker.Datatype.Object(length: 6);
             var object3 = Faker.Datatype.Object(length: 9);
             Assert.True(object1 != object2 && object1 != object3 && object2 != object3);
+
+            var stringObject = Faker.Datatype.Object(length: 5, type: "string");
+            //TODO: How do you test the length of an object in cs?
+            //Assert.True(stringObject.Length == 5);
+            Assert.Contains(":", stringObject.ToString());
+            Assert.True(Helpers.ContainsAny(stringObject.ToString(), hacker.Nouns));
+            //Assert.True(stringObject.GetType() == object);
+
         }
 
         /*
