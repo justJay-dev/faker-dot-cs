@@ -22,7 +22,7 @@ namespace Faker
         public static string StreetName()
         {
             var address = new Locales.Address();
-            return Name.FirstName() + Helpers.Randomize(address.StreetSuffix);
+            return Name.FirstName() + Helpers.Randomize(address.StreetSuffixes);
         }
 
         /*TODO
@@ -35,7 +35,7 @@ namespace Faker
         public static string StreetSuffix()
         {
             var address = new Locales.Address();
-            return Helpers.Randomize(address.StreetSuffix);
+            return Helpers.Randomize(address.StreetSuffixes);
         }
         public static string SecondaryAddress()
         {

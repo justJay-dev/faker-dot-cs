@@ -4,7 +4,7 @@ namespace Faker.Locales
 {
     public partial class Address
     {
-        public List<string> StreetSuffix = new List<string>
+        public List<string> StreetSuffixes = new List<string>
         {
             "Alley",
             "Avenue",
