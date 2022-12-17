@@ -7,6 +7,9 @@ namespace Faker
     public class Finance
     {
 
+        /// <summary>
+        /// Returns a random account number as an integer, default length of 8
+        /// </summary>
         public static int Account(int length = 8)
         {
             var random = new Random();
@@ -14,6 +17,10 @@ namespace Faker
             return Int32.Parse(new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray()));
         }
 
+        /// <summary>
+        /// Returns a random account name as a string
+        /// "Checking Account", "Savings Account", "Money Market Account", "Credit Card Account", "Loan Account"
+        /// </summary>
         public static string AccountName()
         {
             var finance = new Locales.Finance();
