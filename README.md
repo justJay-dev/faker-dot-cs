@@ -6,6 +6,10 @@ In some cases, the API is not identical, but the intent is to be as close as pos
 Examples of deviation include:
 instead of `.number()` we have `.Int(), .Double(), .Float(), .Decimal()`
 
+## Localization
+
+I really want to make this work. I could use some help here.
+
 ## Original Notes
 
 https://fakerjsdocs.netlify.app/
