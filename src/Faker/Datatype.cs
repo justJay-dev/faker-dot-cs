@@ -165,5 +165,13 @@ namespace Faker
             });
             return JsonSerializer.Serialize(results);
         }
+
+        public static string Hexadecimal(int length = 1)
+        {
+            var random = new Random();
+            const string chars = "0123456789ABCDEF";
+            return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
     }
 }

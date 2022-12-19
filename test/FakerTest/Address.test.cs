@@ -14,7 +14,7 @@ namespace FakerTest.Address
             var address = new Faker.Locales.Address();
             var cityName = Faker.Address.CityName();
             Assert.True(cityName != null);
-            Assert.True(address.CityNames.Contains(cityName));
+            Assert.True(Helpers.ContainsAny(cityName, address.CityNames));
         }
         // CityPrefix
         [Fact]
@@ -23,7 +23,7 @@ namespace FakerTest.Address
             var address = new Faker.Locales.Address();
             var cityPrefix = Faker.Address.CityPrefix();
             Assert.True(cityPrefix != null);
-            Assert.True(address.CityPrefixes.Contains(cityPrefix));
+            Assert.True(Helpers.ContainsAny(cityPrefix, address.CityPrefixes));
         }
         // CitySuffix
         [Fact]
@@ -32,7 +32,7 @@ namespace FakerTest.Address
             var address = new Faker.Locales.Address();
             var citySuffix = Faker.Address.CitySuffix();
             Assert.True(citySuffix != null);
-            Assert.True(address.CitySuffixes.Contains(citySuffix));
+            Assert.True(Helpers.ContainsAny(citySuffix, address.CitySuffixes));
         }
         // StreetName
         [Fact]
@@ -41,7 +41,7 @@ namespace FakerTest.Address
             var address = new Faker.Locales.Address();
             var streetName = Faker.Address.StreetName();
             Assert.True(streetName != null);
-            Assert.True(Helpers.ContainsAny(streetName, address.StreetSuffix));
+            Assert.True(Helpers.ContainsAny(streetName, address.StreetSuffixes));
         }
 
         // StreetSuffix
@@ -51,7 +51,7 @@ namespace FakerTest.Address
             var address = new Faker.Locales.Address();
             var streetSuffix = Faker.Address.StreetSuffix();
             Assert.True(streetSuffix != null);
-            Assert.True(address.StreetSuffix.Contains(streetSuffix));
+            Assert.True(Helpers.ContainsAny(streetSuffix, address.StreetSuffixes));
         }
 
         // SecondaryAddress
@@ -65,6 +65,7 @@ namespace FakerTest.Address
         }
 
         // StreetAddress
+        // TODO: These are really REALLY weak tests. 
         [Fact]
         public void StreetAddressTest()
         {
