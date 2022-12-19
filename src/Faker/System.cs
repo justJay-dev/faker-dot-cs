@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Faker
 {
@@ -27,6 +28,45 @@ namespace Faker
             return Helpers.Randomize(system.MimeTypes);
         }
 
+        public static string CommonMimeType()
+        {
+            List<string> CommonMimeTypes = new List<string>()
+        {
+            "application/pdf",
+            "audio/mpeg",
+            "audio/wav",
+            "image/png",
+            "image/jpeg",
+            "image/gif",
+            "video/mp4",
+            "video/mpeg",
+            "text/html"
+        };
+            return Helpers.Randomize(CommonMimeTypes);
+        }
 
+        public static string FileType()
+        {
+            List<string> FileTypes = new List<string>()
+        {
+            "video",
+            "audio",
+            "image",
+            "text",
+            "application"
+        };
+            return Helpers.Randomize(FileTypes);
+        }
+
+        public static string DirectoryPath()
+        {
+            return "/" + Lorem.Word() + "/" + Lorem.Word() + "/" + Lorem.Word() + "/";
+        }
+
+        public static string SimVersion()
+        {
+            return Datatype.Int(2) + "." + Datatype.Int(2) + "." + Datatype.Int(2);
+        }
     }
+
 }
