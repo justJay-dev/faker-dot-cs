@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Faker
 {
-    public class System
+    public class Systems
     {
         public static string FileName()
         {

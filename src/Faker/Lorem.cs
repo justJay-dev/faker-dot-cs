@@ -56,7 +56,7 @@ namespace Faker
 
         public static string Text()
         {
-            int method = new Random().Next(0, 2);
+            int method = new System.Random().Next(0, 2);
             switch (method)
             {
                 case 0:

@@ -14,7 +14,7 @@ namespace Faker
         /// </summary>
         public static int Int(int min = 1, int max = 2147483647)
         {
-            var random = new Random();
+            var random = new System.Random();
             return random.Next(min, max);
         }
         /// <summary>
@@ -24,7 +24,7 @@ namespace Faker
         /// </summary>
         public static double Double(double min = 0.1, double max = 2147483647.9)
         {
-            var random = new Random();
+            var random = new System.Random();
             var value = (random.NextDouble() * (max - min) + min);
             return (double)value;
         }
@@ -53,7 +53,7 @@ namespace Faker
         public static string String(int length = 5)
 
         {
-            var random = new Random();
+            var random = new System.Random();
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
         }
@@ -139,7 +139,7 @@ namespace Faker
 
             // returns randomly generated json, a key for each value, and a value for each key for the given length
             // default length is 7
-            var random = new Random();
+            var random = new System.Random();
             var results = new Dictionary<string, dynamic>();
             Helpers.Repeat.Times(length, () =>
             {
@@ -168,7 +168,7 @@ namespace Faker
 
         public static string Hexadecimal(int length = 1)
         {
-            var random = new Random();
+            var random = new System.Random();
             const string chars = "0123456789ABCDEF";
             return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
         }

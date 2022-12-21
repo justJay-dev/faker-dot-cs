@@ -14,7 +14,7 @@ namespace Faker
             public static dynamic RandomList(dynamic list)
             {
 
-                var random = new Random();
+                var random = new System.Random();
                 return list[random.Next(list.Count)];
             }
             /// <summary>
@@ -23,7 +23,7 @@ namespace Faker
             public static dynamic RandomArray(dynamic array)
             {
 
-                var random = new Random();
+                var random = new System.Random();
                 return array[random.Next(0, array.Length)];
             }
         }
@@ -58,7 +58,7 @@ namespace Faker
         //todo this is absolute wrong, but working enough for UG.
         public static string ReplaceSymbolWithNumber(string value, string symbol = "#")
         {
-            var random = new Random();
+            var random = new System.Random();
             const string numChars = "123456789";
             string replaced = new string(Enumerable.Repeat(numChars, 1).Select(s => s[random.Next(s.Length)]).ToArray());
             string[] split = value.Split(symbol);
