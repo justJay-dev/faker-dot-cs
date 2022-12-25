@@ -10,11 +10,11 @@ namespace Faker
         /// <summary>
         /// Returns a random account number as an integer, default length of 8
         /// </summary>
-        public static int Account(int length = 8)
+        public static string Account(int length = 8)
         {
             var random = new System.Random();
             const string chars = "0123456789";
-            return Int32.Parse(new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray()));
+            return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
         /// <summary>
@@ -161,6 +161,7 @@ namespace Faker
                     {
                         mastercard = mastercard.Replace("[1-5]", random.Next(1, 5).ToString());
                     }
+                    selected = mastercard;
                     break;
                 case "solo":
                     selected = Helpers.Randomize(creditCard.Solo);

@@ -23,7 +23,7 @@ namespace FakerTest.Company
             var company = new Faker.Locales.Company();
             var suffix = Faker.Company.CompanySuffix();
             Assert.True(suffix != null);
-            Assert.True(Helpers.ContainsAny(suffix, company.Suffixes));
+            Assert.True(Faker.Helpers.ContainsAny(suffix, company.Suffixes));
         }
         // Name
         [Fact]
@@ -33,17 +33,17 @@ namespace FakerTest.Company
             var name = new Faker.Locales.Name();
             var nameDefault = Faker.Company.CompanyName();
             Assert.True(nameDefault != null);
-            Assert.True(Helpers.ContainsAny(nameDefault, company.Suffixes));
+            Assert.True(Faker.Helpers.ContainsAny(nameDefault, company.Suffixes));
             Assert.DoesNotContain("-", nameDefault);
             //    Assert.True(!nameDefault.Contains(","));
             Assert.Contains(" ", nameDefault);
             var name1 = Faker.Company.CompanyName(1);
             Assert.True(name1 != null);
-            Assert.True(Helpers.ContainsAny(name1, name.LastNames));
+            Assert.True(Faker.Helpers.ContainsAny(name1, name.LastNames));
             Assert.Contains("-", name1);
             var name2 = Faker.Company.CompanyName(2);
             Assert.True(name2 != null);
-            Assert.True(Helpers.ContainsAny(name2, name.LastNames));
+            Assert.True(Faker.Helpers.ContainsAny(name2, name.LastNames));
             Assert.Contains(",", name2);
 
 
@@ -55,7 +55,7 @@ namespace FakerTest.Company
             var company = new Faker.Locales.Company();
             var adjective = Faker.Company.CatchPhraseAdjective();
             Assert.True(adjective != null);
-            Assert.True(Helpers.ContainsAny(adjective, company.Adjectives));
+            Assert.True(Faker.Helpers.ContainsAny(adjective, company.Adjectives));
         }
 
         [Fact]
@@ -64,7 +64,7 @@ namespace FakerTest.Company
             var company = new Faker.Locales.Company();
             var noun = Faker.Company.CatchPhraseNoun();
             Assert.True(noun != null);
-            Assert.True(Helpers.ContainsAny(noun, company.Nouns));
+            Assert.True(Faker.Helpers.ContainsAny(noun, company.Nouns));
         }
         [Fact]
         public void CatchPhraseDescriptor()
@@ -72,7 +72,7 @@ namespace FakerTest.Company
             var company = new Faker.Locales.Company();
             var descriptor = Faker.Company.CatchPhraseDescriptor();
             Assert.True(descriptor != null);
-            Assert.True(Helpers.ContainsAny(descriptor, company.Descriptors));
+            Assert.True(Faker.Helpers.ContainsAny(descriptor, company.Descriptors));
         }
 
 
@@ -82,9 +82,9 @@ namespace FakerTest.Company
             var company = new Faker.Locales.Company();
             var catchPhrase = Faker.Company.CatchPhrase();
             Assert.True(catchPhrase != null);
-            Assert.True(Helpers.ContainsAny(catchPhrase, company.Adjectives));
-            Assert.True(Helpers.ContainsAny(catchPhrase, company.Nouns));
-            Assert.True(Helpers.ContainsAny(catchPhrase, company.Descriptors));
+            Assert.True(Faker.Helpers.ContainsAny(catchPhrase, company.Adjectives));
+            Assert.True(Faker.Helpers.ContainsAny(catchPhrase, company.Nouns));
+            Assert.True(Faker.Helpers.ContainsAny(catchPhrase, company.Descriptors));
         }
         // Bs
         [Fact]
@@ -93,7 +93,7 @@ namespace FakerTest.Company
             var company = new Faker.Locales.Company();
             var adjective = Faker.Company.BSAdjective();
             Assert.True(adjective != null);
-            Assert.True(Helpers.ContainsAny(adjective, company.BSAdjectives));
+            Assert.True(Faker.Helpers.ContainsAny(adjective, company.BSAdjectives));
 
         }
 
@@ -103,7 +103,7 @@ namespace FakerTest.Company
             var company = new Faker.Locales.Company();
             var noun = Faker.Company.BSNoun();
             Assert.True(noun != null);
-            Assert.True(Helpers.ContainsAny(noun, company.BSNouns));
+            Assert.True(Faker.Helpers.ContainsAny(noun, company.BSNouns));
         }
 
         [Fact]
@@ -112,11 +112,11 @@ namespace FakerTest.Company
             var company = new Faker.Locales.Company();
             var verb = Faker.Company.BSVerbs();
             Assert.True(verb != null);
-            Assert.True(Helpers.ContainsAny(verb, company.BSVerbs));
+            Assert.True(Faker.Helpers.ContainsAny(verb, company.BSVerbs));
             //test the alias
             var alias = Faker.Company.BSBuzz();
             Assert.True(verb != null);
-            Assert.True(Helpers.ContainsAny(alias, company.BSVerbs));
+            Assert.True(Faker.Helpers.ContainsAny(alias, company.BSVerbs));
 
         }
 
@@ -127,9 +127,9 @@ namespace FakerTest.Company
             var bs = Faker.Company.BS();
             Assert.True(bs != null);
             Assert.Contains(" ", bs);
-            Assert.True(Helpers.ContainsAny(bs, company.BSAdjectives));
-            Assert.True(Helpers.ContainsAny(bs, company.BSNouns));
-            Assert.True(Helpers.ContainsAny(bs, company.BSVerbs));
+            Assert.True(Faker.Helpers.ContainsAny(bs, company.BSAdjectives));
+            Assert.True(Faker.Helpers.ContainsAny(bs, company.BSNouns));
+            Assert.True(Faker.Helpers.ContainsAny(bs, company.BSVerbs));
 
         }
 

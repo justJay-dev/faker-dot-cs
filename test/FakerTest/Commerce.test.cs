@@ -15,7 +15,7 @@ namespace FakerTest.Commerce
             var commerce = new Faker.Locales.Commerce();
             var color = Faker.Commerce.Color();
             Assert.True(color != null);
-            Assert.True(Helpers.ContainsAny(color, commerce.Colors));
+            Assert.True(Faker.Helpers.ContainsAny(color, commerce.Colors));
         }
         // Department
         [Fact]
@@ -24,7 +24,7 @@ namespace FakerTest.Commerce
             var commerce = new Faker.Locales.Commerce();
             var department = Faker.Commerce.Department();
             Assert.True(department != null);
-            Assert.True(Helpers.ContainsAny(department, commerce.Departments));
+            Assert.True(Faker.Helpers.ContainsAny(department, commerce.Departments));
         }
         // ProductName
         [Fact]
@@ -33,9 +33,9 @@ namespace FakerTest.Commerce
             var commerce = new Faker.Locales.Commerce.ProductNames();
             var productName = Faker.Commerce.ProductName();
             Assert.True(productName != null);
-            Assert.True(Helpers.ContainsAny(productName, commerce.Adjectives));
-            Assert.True(Helpers.ContainsAny(productName, commerce.Materials));
-            Assert.True(Helpers.ContainsAny(productName, commerce.Products));
+            Assert.True(Faker.Helpers.ContainsAny(productName, commerce.Adjectives));
+            Assert.True(Faker.Helpers.ContainsAny(productName, commerce.Materials));
+            Assert.True(Faker.Helpers.ContainsAny(productName, commerce.Products));
         }
         // Price
         [Fact]

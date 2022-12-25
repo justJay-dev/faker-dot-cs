@@ -61,10 +61,10 @@ namespace FakerTest.Date
         {
             var date = new Faker.Locales.Date.Months();
             var month = Faker.Date.Month();
-            Assert.True(Helpers.ContainsAny(month, date.Wide));
+            Assert.True(Faker.Helpers.ContainsAny(month, date.Wide));
 
             var monthAbbr = Faker.Date.Month(true);
-            Assert.True(Helpers.ContainsAny(monthAbbr, date.Abbr));
+            Assert.True(Faker.Helpers.ContainsAny(monthAbbr, date.Abbr));
 
         }
 
@@ -73,10 +73,10 @@ namespace FakerTest.Date
         {
             var date = new Faker.Locales.Date.Weekdays();
             var day = Faker.Date.Weekday();
-            Assert.True(Helpers.ContainsAny(day, date.Wide));
+            Assert.True(Faker.Helpers.ContainsAny(day, date.Wide));
 
             var dayAbbr = Faker.Date.Weekday(true);
-            Assert.True(Helpers.ContainsAny(dayAbbr, date.Abbr));
+            Assert.True(Faker.Helpers.ContainsAny(dayAbbr, date.Abbr));
         }
 
     }

@@ -144,7 +144,7 @@ namespace FakerTest.Datatype
             //TODO: How do you test the length of an object in cs?
             //Assert.True(stringObject.Length == 5);
             Assert.Contains(":", stringObject.ToString());
-            Assert.True(Helpers.ContainsAny(stringObject.ToString(), hacker.Nouns));
+            Assert.True(Faker.Helpers.ContainsAny(stringObject.ToString(), hacker.Nouns));
             //Assert.True(stringObject.GetType() == object);
 
         }

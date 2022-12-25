@@ -13,7 +13,7 @@ namespace FakerTest.Database
             var database = new Faker.Locales.Database();
             var column = Faker.Database.Column();
             Assert.True(column != null);
-            Assert.True(Helpers.ContainsAny(column, database.Columns));
+            Assert.True(Faker.Helpers.ContainsAny(column, database.Columns));
 
         }
         [Fact]
@@ -22,7 +22,7 @@ namespace FakerTest.Database
             var database = new Faker.Locales.Database();
             var type = Faker.Database.Type();
             Assert.True(type != null);
-            Assert.True(Helpers.ContainsAny(type, database.Types));
+            Assert.True(Faker.Helpers.ContainsAny(type, database.Types));
         }
 
         [Fact]
@@ -31,7 +31,7 @@ namespace FakerTest.Database
             var database = new Faker.Locales.Database();
             var collation = Faker.Database.Collation();
             Assert.True(collation != null);
-            Assert.True(Helpers.ContainsAny(collation, database.Collations));
+            Assert.True(Faker.Helpers.ContainsAny(collation, database.Collations));
         }
 
         [Fact]
@@ -40,7 +40,7 @@ namespace FakerTest.Database
             var database = new Faker.Locales.Database();
             var engine = Faker.Database.Engine();
             Assert.True(engine != null);
-            Assert.True(Helpers.ContainsAny(engine, database.Engines));
+            Assert.True(Faker.Helpers.ContainsAny(engine, database.Engines));
 
         }
 

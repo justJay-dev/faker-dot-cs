@@ -54,11 +54,9 @@ namespace Faker
         {
             DateTime start = DateTime.Parse(from);
             DateTime end = DateTime.Parse(to);
-            int randMonth = Datatype.Int(start.Month, end.Month);
-            int randDay = Datatype.Int(start.Day, DateTime.DaysInMonth(start.Year, randMonth));
-            int randYear = Datatype.Int(start.Year, end.Year);
-            return DateTime.Parse(randMonth + "/" + randDay + "/" + randYear);
-
+            int range = (end - start).Days;
+            int random = Datatype.Int(1, range);
+            return start.AddDays(random);
 
         }
 

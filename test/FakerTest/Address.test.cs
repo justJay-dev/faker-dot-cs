@@ -14,7 +14,7 @@ namespace FakerTest.Address
             var address = new Faker.Locales.Address();
             var cityName = Faker.Address.CityName();
             Assert.True(cityName != null);
-            Assert.True(Helpers.ContainsAny(cityName, address.CityNames));
+            Assert.True(Faker.Helpers.ContainsAny(cityName, address.CityNames));
         }
         // CityPrefix
         [Fact]
@@ -23,7 +23,7 @@ namespace FakerTest.Address
             var address = new Faker.Locales.Address();
             var cityPrefix = Faker.Address.CityPrefix();
             Assert.True(cityPrefix != null);
-            Assert.True(Helpers.ContainsAny(cityPrefix, address.CityPrefixes));
+            Assert.True(Faker.Helpers.ContainsAny(cityPrefix, address.CityPrefixes));
         }
         // CitySuffix
         [Fact]
@@ -32,7 +32,7 @@ namespace FakerTest.Address
             var address = new Faker.Locales.Address();
             var citySuffix = Faker.Address.CitySuffix();
             Assert.True(citySuffix != null);
-            Assert.True(Helpers.ContainsAny(citySuffix, address.CitySuffixes));
+            Assert.True(Faker.Helpers.ContainsAny(citySuffix, address.CitySuffixes));
         }
         // StreetName
         [Fact]
@@ -41,7 +41,7 @@ namespace FakerTest.Address
             var address = new Faker.Locales.Address();
             var streetName = Faker.Address.StreetName();
             Assert.True(streetName != null);
-            Assert.True(Helpers.ContainsAny(streetName, address.StreetSuffixes));
+            Assert.True(Faker.Helpers.ContainsAny(streetName, address.StreetSuffixes));
         }
 
         // StreetSuffix
@@ -51,7 +51,7 @@ namespace FakerTest.Address
             var address = new Faker.Locales.Address();
             var streetSuffix = Faker.Address.StreetSuffix();
             Assert.True(streetSuffix != null);
-            Assert.True(Helpers.ContainsAny(streetSuffix, address.StreetSuffixes));
+            Assert.True(Faker.Helpers.ContainsAny(streetSuffix, address.StreetSuffixes));
         }
 
         // SecondaryAddress
@@ -61,7 +61,7 @@ namespace FakerTest.Address
             var address = new Faker.Locales.Address();
             var secondaryAddress = Faker.Address.SecondaryAddress();
             Assert.True(secondaryAddress != null);
-            Assert.True(Helpers.ContainsAny(secondaryAddress, address.SecondaryAddresss));
+            Assert.True(Faker.Helpers.ContainsAny(secondaryAddress, address.SecondaryAddresss));
         }
 
         // StreetAddress

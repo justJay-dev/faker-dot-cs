@@ -51,7 +51,7 @@ namespace Faker
         public static string DomainSuffix()
         {
             var internet = new Locales.Internet();
-            return Helpers.Randomize(internet.DomainSuffixes);
+            return "." + Helpers.Randomize(internet.DomainSuffixes);
 
         }
 
@@ -60,15 +60,6 @@ namespace Faker
             return Lorem.Word();
         }
 
-        //TODO
-        /*
-        *ip
-        *ipv6
-        *userAGent
-        *color
-        *mac
-        *password
-        */
 
         public static string IP()
         {
