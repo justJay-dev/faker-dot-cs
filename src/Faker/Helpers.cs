@@ -55,14 +55,16 @@ namespace Faker
             }
         }
 
-        //todo this is absolute wrong, but working enough for UG.
+        /// <summary>
+        /// Replaces a given symbol with a random number for each occurence
+        /// ###-### -> 123-456
+        /// BUG: This just repeats the first number in the string
+        /// </summary>
         public static string ReplaceSymbolWithNumber(string value, string symbol = "#")
         {
             var random = new System.Random();
-            const string numChars = "123456789";
-            string replaced = new string(Enumerable.Repeat(numChars, 1).Select(s => s[random.Next(s.Length)]).ToArray());
-            string[] split = value.Split(symbol);
-            return value.Replace(symbol, replaced);
+            const string chars = "0123456789";
+            return value.Replace(symbol, new string(Enumerable.Repeat(chars, 1).Select(s => s[random.Next(s.Length)]).ToArray()));
         }
 
 
